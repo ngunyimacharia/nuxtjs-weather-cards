@@ -13,7 +13,12 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    ]
+    ],
+    script: [
+      {
+        src: `https://maps.googleapis.com/maps/api/js?key=${process.env.NUXT_ENV_GOOGLE_MAPS_API_KEY}&libraries=places&callback=initMap`,
+      },
+    ],
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

@@ -1,5 +1,11 @@
 <template>
-  <input id="city-search" />
+  <div class="bg-gray-100 text-center">
+    <input id="city-search" class="mx-auto m-5"/>
+
+    <div class="text-center m-5">
+    <cld-image class="mx-auto" public-id="nuxtjs-weather-cards/template" />
+    </div>
+  </div>
 </template>
 
 <script>

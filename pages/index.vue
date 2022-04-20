@@ -2,7 +2,7 @@
   <div class="bg-gray-100 min-h-screen text-center">
 
     <div class=" w-1/3 py-10 mx-auto">
-        <input id="city-search" class="w-full mx-auto m-5 p-5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md" >
+        <input id="city-search" class="w-full mx-auto m-5 p-5 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block sm:text-sm border-gray-300 rounded-md" />
 
         <p v-if="status" class="text-gray-600 text-sm">
           {{status}}
@@ -92,7 +92,6 @@
 export default {
   data(){
     return {
-      search:null,
       city: null,
       weather: null,
       status: "Waiting for country selection.."
@@ -111,16 +110,11 @@ export default {
     }
   },
   watch:{
-    search(){
-      this.city = null;
-      this.weather = null;
-    },
     city(){
-      if(!this.city){
-        return;
-      }
       this.weather = null;
-      this.getWeatherData();
+      if(this.city){
+        this.getWeatherData();
+      }
     },
     weather(){
       this.$forceUpdate();
